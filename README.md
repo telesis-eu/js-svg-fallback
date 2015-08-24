@@ -12,6 +12,12 @@ Simply add the JS-File to your Page (the CSS-File is added by default)
 <script type="text/javascript" src="https://lduer.github.io/js-svg-fallback/src/svg-fallback.js" id="js-fallback-script"></script>
 ```
 
+or from RawGit:
+
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/lduer/js-svg-fallback/master/src/svg-fallback.js" id="js-fallback-script"></script>
+```
+
 > **Note**: If you don't have jQuery enabled, the Script must be added just before the ``</body>``-Tag to work.
 
 You may have noticed the ``id``-attribute: If you don't want to configure the functions inside the ``#js-fallback-script`` is used to identify the JS source-file and load the CSS file with the additions.
