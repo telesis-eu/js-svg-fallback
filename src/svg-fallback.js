@@ -7,13 +7,17 @@ function isIE(userAgent) {
     userAgent = userAgent || navigator.userAgent;
 
     var html = document.getElementsByTagName('html')[0];
+
     var state = document.readyState
-    if (['interactive', 'complete'].indexOf(document.readyState) > -1 && (html.classList.contains('is-ie') || html.classList.contains('not-ie'))) {
+    if (['interactive', 'complete'].indexOf(document.readyState) > -1 && (typeof html.classList !== 'undefined') && (html.classList.contains('is-ie') || html.classList.contains('not-ie'))) {
         return html.classList.contains('is-ie');
     } else {
+        if (html.className.indexOf("is-ie") > -1) {
+            return true;
+        }
         var isIE = userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1 || userAgent.indexOf("Edge/") > -1;
         if (isIE) {
-            html.classList.add('is-ie');
+            html.className += ' is-ie';
         } else {
             html.classList.add('not-ie');
         }
